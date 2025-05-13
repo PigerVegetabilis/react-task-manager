@@ -1,0 +1,17 @@
+.task-item{
+    width: 80%;
+    border: solid 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.task-item:hover {
+  border-color: #646cff;
+}
