@@ -2,16 +2,23 @@
     width: 80%;
     border: solid 1px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: border-color 0.25s;
+    cursor: grab;
     min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     margin-bottom: 10px;
+    touch-action: none; /* Важно для мобильных устройств */
+    user-select: none;
+    transition: transform 0.1s ease;
 }
 
-.task-item:hover {
-  border-color: #646cff;
+.task-item.dragging {
+  opacity: 0;
+  background: #f0f0f0;
+}
+
+.task-item:active {
+  cursor: grabbing;
 }
