@@ -1,0 +1,11 @@
+.task-block{
+    width: 25%;
+    border: solid 1px;
+    border-radius: 15px;
+    min-height: 400px;
+}
+
+h2{
+    text-transform: uppercase;
+    text-align: center;
+}
