@@ -13,8 +13,10 @@ function TaskBlock({title, tasks = [], status, activeTask}){
 
     return(
         <div className="task-block" ref={setNodeRef}>
-        <h2>{title}</h2>
-        <hr/>
+        <div className="title">
+            <h2>{title}</h2>
+            <hr/>
+        </div>
         <div className="tasks-container">
             <SortableContext
                 items={tasks.map(task => task.id)}

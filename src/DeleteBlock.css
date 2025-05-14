@@ -1,0 +1,20 @@
+.delete-block{
+    border-color: brown;
+    width: 40%;
+    text-transform: uppercase;
+    border-width: 1px;
+    border-style: solid;
+    color: brown;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-block.active {
+  background: #ffcdd2;
+  transform: scale(1.05);
+}

@@ -12,6 +12,8 @@
     touch-action: none; /* Важно для мобильных устройств */
     user-select: none;
     transition: transform 0.1s ease;
+    text-align: center;
+    background-color: #242424;
 }
 
 .task-item.dragging {

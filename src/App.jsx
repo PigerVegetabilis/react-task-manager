@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { DndContext, DragOverlay, closestCorners } from '@dnd-kit/core';
 import { arrayMove } from '@dnd-kit/sortable';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import TaskBlock from './TaskBlock.jsx'
 import TaskItem from './TaskItem.jsx';
+import DeleteBlock from './DeleteBlock.jsx';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -47,6 +46,11 @@ function App() {
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
+    if (over?.id === 'delete') {
+      if (window.confirm('Удалить задачу?')) {
+        setTasks(tasks.filter(task => task.id !== active.id));
+      }
+    }
     if (!over) return;
 
     setActiveTask(null);
@@ -90,6 +94,7 @@ function App() {
           activeTask={activeTask}
         />
       </div>
+      <DeleteBlock/>
         <DragOverlay>
           {activeTask ? (
             <TaskItem
@@ -98,7 +103,8 @@ function App() {
               style={{
                 opacity: 0.8,
                 transform: 'scale(1.05)',
-                boxShadow: '0 0 10px rgba(0,0,0,0.2)'
+                boxShadow: '0 0 10px rgba(0,0,0,0.2)',
+                pointerEvents: 'none'
               }}
             />
           ) : null}

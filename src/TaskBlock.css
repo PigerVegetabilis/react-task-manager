@@ -2,12 +2,35 @@
     width: 25%;
     border: solid 1px;
     border-radius: 15px;
-    min-height: 400px;
+    height: 400px;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 
+.task-block::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.task-block::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #888;
+}
+
+.task-block::-webkit-scrollbar-track{
+    border: 10px solid transparent;
+}
 h2{
     text-transform: uppercase;
     text-align: center;
+    margin: 0;
+}
+
+.title{
+    position: sticky;
+    top: 0px;
+    background-color: #242424;
+    padding-top: 20px;
 }
